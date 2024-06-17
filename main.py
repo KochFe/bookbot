@@ -4,7 +4,15 @@ def main():
     num_words = get_word_count(text)
     unique_chars_dict = get_unique_characters(text)
     dict_list = sort_dict(unique_chars_dict)
-    print(dict_list)
+
+    #return every unique char in a nice way:
+    print(f"--- Begin report of {path} ---")
+    print(f"{num_words} words were found in the document")
+    print("")
+    for i in range(len(dict_list)):
+        if dict_list[i]["char"].isalpha():
+            print(f"The'{dict_list[i]["char"]}‘ character was found {dict_list[i]["count"]} times")
+    print("--- End report ---")
 
 
 def get_book_text(path: str) -> str:
